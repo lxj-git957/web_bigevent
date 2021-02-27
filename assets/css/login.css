@@ -19,4 +19,47 @@ html,body{
     height: 60px;
     background: url(../images/login_title.png) no-repeat;
     background-position: center;
+<<<<<<< HEAD
+=======
+}
+.loginbox .user_register{
+    display: none;
+}
+.login-form{
+    padding: 0 60px;
+}
+.reg-form{
+    display: none;
+    padding: 0 60px;
+
+}
+.username{
+    position: absolute;
+    top: 69px;
+    left: 63px;
+}
+.password{
+    position: absolute;
+    top: 122px;
+    left: 63px;
+}
+.passwordconfirm{
+    position: absolute;
+    top: 176px;
+    left: 63px;
+}
+input{
+    padding-left: 27px !important;
+}
+a:first-child{
+    position: absolute;
+    right: 60px;
+    margin-top: 40px;
+}
+a:last-child{
+    position: absolute;
+    right: 60px;
+    margin-top: 40px;
+    
+>>>>>>> login
 }
