@@ -19,8 +19,6 @@ html,body{
     height: 60px;
     background: url(../images/login_title.png) no-repeat;
     background-position: center;
-<<<<<<< HEAD
-=======
 }
 .loginbox .user_register{
     display: none;
@@ -61,5 +59,4 @@ a:last-child{
     right: 60px;
     margin-top: 40px;
     
->>>>>>> login
 }
