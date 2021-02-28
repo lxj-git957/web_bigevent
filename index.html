@@ -6,6 +6,8 @@
     <title>后台主页</title>
     <!-- 导入 layui 的样式表 -->
     <link rel="stylesheet" href="/assets/lib/layui/css/layui.css" />
+    <!-- 引用bootstrap -->
+    <link rel="stylesheet" href="./assets/lib/bootstrap.css">
     <!-- 第三方图库 -->
     <link rel="stylesheet" href="/assets/fonts/iconfont.css">
     <!-- 引入自己的css -->
@@ -43,7 +45,7 @@
           <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
           <ul class="layui-nav layui-nav-tree" lay-filter="test" lay-shrink="all">
             <li class="layui-nav-item layui-this"><a href="/home/dashboard.html" target="fm"><span class="iconfont icon-home"></span>首页</a></li>
-            <li class="layui-nav-item layui-nav-itemed">
+            <li class="layui-nav-item">
               <a class="" href="javascript:;"><span class="iconfont icon-16"></span>文章管理</a>
               <dl class="layui-nav-child">
                 <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章类别</a></dd>
@@ -65,8 +67,8 @@
 
       <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px;">
-            <iframe name="fm" src="/home/dashboard.html" frameborder="0"></iframe>
+        <div style="padding: 15px;" class="first-page">
+            <iframe name="fm" src="/home/dashboard.html" frameborder="0" ></iframe>
         </div>
       </div>
 
