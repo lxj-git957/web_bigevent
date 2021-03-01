@@ -14,15 +14,16 @@ function getinfo(){
 }
 
 function renderAvatar(obj){
+    let name = obj.nickname || obj.username
+    $('#welcome').html('欢迎&nbsp&nbsp'+name)
     if(obj.user_pic === null){
-        let name = obj.nickname || obj.username
         let letter = name[0].toUpperCase()
         $('.text-avatar').html(letter)
         $('.layui-nav-img').hide()
         $('.text-avatar').show()
-        $('#welcome').html('欢迎&nbsp&nbsp'+name)
+        
     }else{
-        $('.layui-nav-img').attr('src',user_pic).show()
+        $('.layui-nav-img').attr('src',obj.user_pic).show()
         $('.text-avatar').hide()
     }
 }
