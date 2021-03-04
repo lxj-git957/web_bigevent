@@ -69,13 +69,50 @@ $(function () {
         var cate_id = $('[name=cate_id]').val()
         var state = $('[name=state]').val()
         // 为查询参数对象 q 中对应的属性赋值
+
         q.cate_id = cate_id
         q.state = state
         // 根据最新的筛选条件，重新渲染表格的数据
         initTable()
     })
     //分页
+    //定义渲染分页的方法
     function renderPage(total) {
-        console.log(total)
+            layui.laypage.render({
+            elem: 'pagelist' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: total //数据总数，从服务端得到
+            ,limit:q.pagesize
+            ,curr:q.pagenum,
+            layout:['count', 'limit', 'prev', 'page', 'next', 'skip'],
+            limits: [2, 3, 5, 10]
+            ,jump: function(obj,first){
+                q.pagenum = obj.curr
+                if (!first) {
+                    initTable()
+                }
+            }
+          });
     }
+    //实现删除功能
+    $('tbody').on('click','.btnDelete',function(){
+       var id = $(this).attr('data-id')
+       layui.layer.confirm('确认删除？',{icon: 3,title: '提示'},function(index){
+        $.ajax({
+            type: "get",
+            url: '/my/article/delete/' + id,
+            success: function (res) {
+                if (res.status !== 0) {
+                    return layer.msg('删除文章失败！')
+                  }
+                  layer.msg('删除文章成功！')
+                  initTable()
+            }
+        });
+
+        layer.close(index)
+       })
+        
+
+    })
+    
 })
